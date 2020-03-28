@@ -1,0 +1,7 @@
+#!/usr/bin/wish
+grid [label .myLabel -text Babashka-Tk -textvariable labelText]
+grid [text .myText -width 20 -height 5]
+.myText insert 1.0 Year-of-the\nBabashka-Desktop
+grid [entry .myEntry -text Entry]
+grid [message .myMessage -background orange -foreground purple -text Message\nwidget]
+grid [button .myButton1  -text Click-me! -command "set labelText clicked"]
