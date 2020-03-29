@@ -1,24 +1,29 @@
 (defn label
+  "Widget for displaying a single line of text."
   [s]
   (str "grid [label .myLabel -text "
        s " -textvariable labelText]\n"))
 
 (defn text
+  "Widget for displaying and optionally edit multiple lines of text."
   [s w h]
   (str "grid [text .myText -width "
        w " -height " h "]
 .myText insert 1.0 " s "\n"))
 
 (defn entry
+  "Widget used to accept a single line of text as input."
   [s]
   (str "grid [entry .myEntry -text " s "]\n"))
 
 (defn msg
-  [bg fg text]
+  "Widget for displaying multiple lines of text."
+  [bg fg s]
   (str "grid [message .myMessage -background " bg
-       " -foreground " fg " -text " text "]\n"))
+       " -foreground " fg " -text " s "]\n"))
 
 (defn button
+  "Widget that is clickable and triggers an action."
   [s f]
   (str "grid [button .myButton1  -text " s
        " -command " f "]\n"))
