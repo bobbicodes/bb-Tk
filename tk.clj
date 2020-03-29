@@ -28,6 +28,13 @@
   (str "grid [button .myButton1  -text " s
        " -command " f "]\n"))
 
+(defn top-level
+  "Widget that creates a frame that is a new top level window."
+  [w h bg border padx pady]
+  (str "toplevel .top -width " w " -height " h
+" -background " bg " -relief ridge -borderwidth " border
+" -padx " padx " -pady " pady))
+
 (let [top-bar (label "Babashka-Tk")
       window (text "Year-of-the\\nBabashka-Desktop"
                    20 5)
