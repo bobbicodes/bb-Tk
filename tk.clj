@@ -19,16 +19,16 @@
        " -foreground " fg " -text " text "]\n"))
 
 (defn button
-  [s]
+  [s f]
   (str "grid [button .myButton1  -text " s
-       " -command \"set labelText clicked\"]\n"))
+       " -command " f "]\n"))
 
 (let [top-bar (label "Babashka-Tk")
       window (text "Year-of-the\\nBabashka-Desktop"
                    20 5)
       entry (entry "Entry")
       message (msg "orange" "purple" "Message\\nwidget")
-      button (button "Click-me!")]
+      button (button "Click-me!" "\"set labelText clicked\"")]
   (spit "widget" (str "#!/usr/bin/wish\n"
                       top-bar window entry message button))
   (shell/sh "chmod" "+x" "./widget")
